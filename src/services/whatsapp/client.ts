@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createLogger } from '../../utils/logger';
+import { createLogger } from '../../utils/logger.js';
 
 const logger = createLogger('WhatsApp');
 

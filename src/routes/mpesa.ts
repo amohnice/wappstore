@@ -1,10 +1,10 @@
 import { Router, Request, Response } from 'express';
-import { createLogger } from '../utils/logger';
-import { MPesaService } from '../services/payments/mpesa';
-import { db } from '../database/client';
-import { orders, transactions, conversations } from '../database/schema';
+import { createLogger } from '../utils/logger.js';
+import { MPesaService } from '../services/payments/mpesa.js';
+import { db } from '../database/client.js';
+import { orders, transactions, conversations } from '../database/schema.js';
 import { eq } from 'drizzle-orm';
-import { WhatsAppService } from '../services/whatsapp/client';
+import { WhatsAppService } from '../services/whatsapp/client.js';
 
 const router: Router = Router();
 const logger = createLogger('M-Pesa-Webhook');

@@ -1,9 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { db } from '../database/client';
-import { products, orders, customers } from '../database/schema';
+import { db } from '../database/client.js';
+import { products, orders, customers } from '../database/schema.js';
 import { eq, and, desc, sql, gte } from 'drizzle-orm';
 import { z } from 'zod';
-import { createLogger } from '../utils/logger';
+import { createLogger } from '../utils/logger.js';
 
 const router: Router = Router();
 const logger = createLogger('MerchantAPI');

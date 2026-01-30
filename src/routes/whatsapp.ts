@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 
-import { createLogger } from '../utils/logger';
-import { enqueueMessage } from '../services/queue';
+import { createLogger } from '../utils/logger.js';
+import { enqueueMessage } from '../services/queue.js';
 import { z } from 'zod';
 
 const router: Router = Router();

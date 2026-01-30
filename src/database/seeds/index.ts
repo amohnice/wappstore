@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { db } from '../client.js';
 import { businesses, products, customers } from '../schema.js';
-import { createLogger } from '../../utils/logger';
+import { createLogger } from '../../utils/logger.js';
 
 const logger = createLogger('Seed');
 

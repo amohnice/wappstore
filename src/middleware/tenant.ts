@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { db } from '../database/client';
+import { db } from '../database/client.js';
 import { sql } from 'drizzle-orm';
 
 export async function tenantMiddleware(
