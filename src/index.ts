@@ -56,119 +56,184 @@ app.use((req, _res, next) => {
 // =============================================
 
 app.get('/', (_req, res) => {
-    res.send(`
+  res.send(`
         <!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Commerce OS | AI-Powered Conversational Commerce</title>
-            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
             <style>
                 :root {
-                    --primary: #6366f1;
-                    --primary-hover: #4f46e5;
-                    --bg: #0f172a;
-                    --glass: rgba(30, 41, 59, 0.7);
-                    --text: #f8fafc;
-                    --text-muted: #94a3b8;
+                    --bg: #ffffff;
+                    --bg-secondary: #f7f6f3;
+                    --text: #37352f;
+                    --text-secondary: #787774;
+                    --text-tertiary: #9b9a97;
+                    --border: #e9e9e7;
+                    --hover: #f1f1ef;
+                    --accent: #37352f;
                 }
                 * { margin: 0; padding: 0; box-sizing: border-box; }
                 body {
-                    font-family: 'Outfit', sans-serif;
+                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
                     background: var(--bg);
                     color: var(--text);
-                    line-height: 1.6;
-                    overflow-x: hidden;
+                    line-height: 1.5;
+                    -webkit-font-smoothing: antialiased;
+                }
+                .container {
+                    max-width: 1100px;
+                    margin: 0 auto;
+                    padding: 0 2rem;
                 }
                 .hero {
                     min-height: 100vh;
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
                     justify-content: center;
-                    text-align: center;
-                    padding: 2rem;
-                    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+                    padding: 4rem 0;
                 }
-                .glass-card {
-                    background: var(--glass);
-                    backdrop-filter: blur(12px);
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    padding: 3rem;
-                    border-radius: 2rem;
-                    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-                    max-width: 800px;
-                    width: 100%;
-                }
-                h1 {
-                    font-size: 4rem;
-                    font-weight: 800;
-                    background: linear-gradient(to right, #818cf8, #c084fc);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    margin-bottom: 1rem;
-                }
-                p {
-                    font-size: 1.25rem;
-                    color: var(--text-muted);
-                    margin-bottom: 2rem;
+                .hero-content {
+                    margin-bottom: 4rem;
                 }
                 .badge {
-                    background: rgba(99, 102, 241, 0.1);
-                    color: var(--primary);
-                    padding: 0.5rem 1rem;
-                    border-radius: 9999px;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    background: var(--bg-secondary);
+                    color: var(--text-secondary);
+                    padding: 0.375rem 0.75rem;
+                    border-radius: 0.375rem;
                     font-size: 0.875rem;
-                    font-weight: 600;
-                    margin-bottom: 1rem;
-                    display: inline-block;
+                    font-weight: 500;
+                    margin-bottom: 2rem;
                 }
-                .features {
+                .badge::before {
+                    content: '✨';
+                    font-size: 1rem;
+                }
+                h1 {
+                    font-size: 3.5rem;
+                    font-weight: 700;
+                    color: var(--text);
+                    margin-bottom: 1.5rem;
+                    letter-spacing: -0.03em;
+                    line-height: 1.1;
+                }
+                .subtitle {
+                    font-size: 1.25rem;
+                    color: var(--text-secondary);
+                    margin-bottom: 0;
+                    font-weight: 400;
+                    max-width: 650px;
+                }
+                .features-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                     gap: 1.5rem;
                     margin-top: 3rem;
-                    text-align: left;
                 }
-                .feature-item {
-                    padding: 1.5rem;
-                    border-radius: 1rem;
-                    background: rgba(255, 255, 255, 0.03);
+                .feature-card {
+                    background: var(--bg);
+                    border: 1px solid var(--border);
+                    border-radius: 0.5rem;
+                    padding: 2rem;
+                    transition: all 0.15s ease;
+                    cursor: default;
                 }
-                .feature-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #818cf8; }
+                .feature-card:hover {
+                    background: var(--hover);
+                    border-color: rgba(55, 53, 47, 0.16);
+                }
+                .feature-icon {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    background: var(--bg-secondary);
+                    border-radius: 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.25rem;
+                    margin-bottom: 1.25rem;
+                }
+                .feature-card h3 {
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    color: var(--text);
+                    margin-bottom: 0.75rem;
+                    letter-spacing: -0.01em;
+                }
+                .feature-card p {
+                    font-size: 0.9375rem;
+                    color: var(--text-secondary);
+                    line-height: 1.6;
+                    margin: 0;
+                }
+                .divider {
+                    height: 1px;
+                    background: var(--border);
+                    margin: 4rem 0;
+                }
                 .footer {
-                    margin-top: 4rem;
-                    padding-top: 2rem;
-                    border-top: 1px solid rgba(255, 255, 255, 0.05);
+                    padding: 2rem 0;
+                    text-align: center;
+                }
+                .footer-content {
                     font-size: 0.875rem;
-                    color: var(--text-muted);
+                    color: var(--text-tertiary);
+                    font-weight: 400;
+                }
+                @media (max-width: 768px) {
+                    h1 {
+                        font-size: 2.5rem;
+                    }
+                    .subtitle {
+                        font-size: 1.125rem;
+                    }
+                    .features-grid {
+                        grid-template-columns: 1fr;
+                    }
                 }
             </style>
         </head>
         <body>
-            <div class="hero">
-                <div class="badge">Next Generation Commerce</div>
-                <h1>Commerce OS</h1>
-                <div class="glass-card">
-                    <p>Unlock the power of conversational commerce. Our platform uses advanced AI to automate sales, customer engagement, and order management directly through WhatsApp.</p>
-                    <div class="features">
-                        <div class="feature-item">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="badge">Next Generation Commerce</div>
+                        <h1>Commerce OS</h1>
+                        <p class="subtitle">Unlock the power of conversational commerce. Our platform uses advanced AI to automate sales, customer engagement, and order management directly through WhatsApp.</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🤖</div>
                             <h3>AI Sales Agent</h3>
-                            <p style="font-size: 0.9rem;">Automated product discovery and personalized shopping experiences.</p>
+                            <p>Automated product discovery and personalized shopping experiences.</p>
                         </div>
-                        <div class="feature-item">
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">💳</div>
                             <h3>Instant Payments</h3>
-                            <p style="font-size: 0.9rem;">Secure M-Pesa integration for seamless checkout flows.</p>
+                            <p>Secure M-Pesa integration for seamless checkout flows.</p>
                         </div>
-                        <div class="feature-item">
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">📦</div>
                             <h3>Order Tracking</h3>
-                            <p style="font-size: 0.9rem;">End-to-end management from conversation to delivery.</p>
+                            <p>End-to-end management from conversation to delivery.</p>
                         </div>
                     </div>
                 </div>
+                
+                <div class="divider"></div>
+                
                 <div class="footer">
-                    Built for modern businesses. &copy; 2024 Commerce OS. All rights reserved.
+                    <div class="footer-content">
+                        Built for modern businesses. © 2024 Commerce OS. All rights reserved.
+                    </div>
                 </div>
             </div>
         </body>
