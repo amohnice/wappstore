@@ -37,8 +37,8 @@ A multi-tenant conversational commerce platform built for WhatsApp, leveraging G
 ### 1. Local Setup
 1. **Clone & Install**:
    ```bash
-   git clone <repo-url>
-   cd commerce-os
+   git clone https://github.com/amohnice/wappstore.git
+   cd wappstore
    pnpm install
    ```
 2. **Environment Setup**:
