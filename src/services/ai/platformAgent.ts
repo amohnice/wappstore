@@ -181,7 +181,7 @@ export const requestSubscriptionPaymentTool = ai.defineTool(
             const response = await mpesa.initiateSTKPush({
                 phoneNumber: input.merchantPhone,
                 amount: 1, // KES 1 activation fee
-                accountReference: 'OS_ACTIVATE',
+                accountReference: 'WAPP_ACTIVATE',
                 transactionDesc: `Activate ${input.businessName}`,
             });
 
