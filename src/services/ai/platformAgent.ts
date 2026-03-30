@@ -372,7 +372,7 @@ export const platformAgentFlow = ai.defineFlow({
     try {
         const result = await ai.generate({
             model: 'googleai/gemini-flash-latest',
-            prompt: `You are the Merchant Success Assistant for Commerce OS. 
+            prompt: `You are the Merchant Success Assistant for WappStore. 
             Your job is to help business owners onboard and manage their shops.
             
             Merchant Interaction Flow:

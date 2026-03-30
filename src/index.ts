@@ -62,7 +62,7 @@ app.get('/', (_req, res) => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Commerce OS | AI-Powered Conversational Commerce</title>
+            <title>WappStore | AI-Powered Conversational Commerce</title>
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
             <style>
                 :root {
@@ -203,7 +203,7 @@ app.get('/', (_req, res) => {
                 <div class="hero">
                     <div class="hero-content">
                         <div class="badge">Next Generation Commerce</div>
-                        <h1>Commerce OS</h1>
+                        <h1>WappStore</h1>
                         <p class="subtitle">Unlock the power of conversational commerce. Our platform uses advanced AI to automate sales, customer engagement, and order management directly through WhatsApp.</p>
                     </div>
                     

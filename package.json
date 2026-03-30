@@ -1,5 +1,5 @@
 {
-  "name": "commerce-os",
+  "name": "wappstore",
   "version": "1.0.0",
   "description": "Multi-tenant conversational commerce platform for WhatsApp",
   "main": "dist/index.js",

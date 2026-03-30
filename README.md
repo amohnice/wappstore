@@ -1,4 +1,4 @@
-# Commerce OS 🚀
+# WappStore 🚀
 
 A multi-tenant conversational commerce platform built for WhatsApp, leveraging Genkit AI and M-Pesa. Developed for modern African merchants to scale via AI-driven conversational commerce.
 

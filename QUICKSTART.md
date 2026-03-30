@@ -21,7 +21,7 @@ npm install -g pnpm
 
 ```bash
 # Create project directory
-mkdir commerce-os && cd commerce-os
+mkdir commerce-os && cd wappstore
 
 # Initialize project
 pnpm init

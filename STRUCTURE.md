@@ -1,6 +1,6 @@
-# 📁 Commerce OS Project Structure
+# 📁 WappStore Project Structure
 
-This document provides a map of the core components in Commerce OS.
+This document provides a map of the core components in WappStore.
 
 ## Directory Overview
 
